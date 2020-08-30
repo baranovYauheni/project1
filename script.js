@@ -1,11 +1,21 @@
 "use strict";
 
-// const result = confirm("Are you hear?");
+const numberOfFilms = +prompt('Как много фильмов вы посмотрели?', '');
+console.log(typeof (numberOfFilms));
 
-const answers = [];
+let personalMovieDB = {
+    count : numberOfFilms,
+    movies : {} ,
+    actors : {} ,
+    genres : [],
+    privat : false
+};
 
-answers[0] = prompt('How old are you?');
-answers[1] = prompt('whats is your name?');
-answers[2] = prompt('do you speak english?');
+const a = prompt('whats films?', ''),
+      b = prompt('score', ''),
+      c = prompt('whats films?', ''),
+      d = prompt('score', '');
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-document.write(answers);
+console.log(personalMovieDB);
