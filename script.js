@@ -11,11 +11,26 @@ let personalMovieDB = {
     privat : false
 };
 
-const a = prompt('whats films?', ''),
-      b = prompt('score', ''),
-      c = prompt('whats films?', ''),
-      d = prompt('score', '');
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+for (let i = 0; i < 2; i++) {
+    let a = prompt('Whats film?', '');
+    let b = prompt('how many score?', '');
 
+    if(a != null && b != null && a != '' && b != '' && a.length <= 50 && b.length <= 50){
+        personalMovieDB.movies[a] = b;
+        console.log('Done');
+    } else{
+        console.log('error');
+        i--;
+    }   
+}
+
+if(personalMovieDB.count < 10) {
+    alert('мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+    alert('вы класический зритель');
+} else {
+    alert('вы киноман');
+}
 console.log(personalMovieDB);
+
+
